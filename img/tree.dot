@@ -1,7 +1,15 @@
 digraph
  {
-    <root> -> <child left>
-    <root> -> <child right>
-    <child right> -> <kek2>
-    <child right> -> <kek>
+    <Love food> -> <Eat a lot>
+    <Eat a lot> -> <Small>
+    <Small> -> <Nat>
+    <Small> -> <Prep>
+    <Prep> -> <Ivanova >
+    <Prep> -> <Fight >
+    <Fight > -> <Nikitos >
+    <Fight > -> <Oparina >
+    <Eat a lot> -> <You>
+    <Love food> -> <Love water>
+    <Love water> -> <Africa>
+    <Love water> -> <Normal people>
  }

@@ -1,14 +1,38 @@
-{ root
-    { child left
-        {}
-        {}
-    }
-    { child right
-        { kek2
+{ Love food
+    { Eat a lot
+        { Small
+            { Nat
+                {}
+                {}
+            }
+            { Prep
+                { Ivanova 
+                    {}
+                    {}
+                }
+                { Fight 
+                    { Nikitos 
+                        {}
+                        {}
+                    }
+                    { Oparina 
+                        {}
+                        {}
+                    }
+                }
+            }
+        }
+        { You
             {}
             {}
         }
-        { kek
+    }
+    { Love water
+        { Africa
+            {}
+            {}
+        }
+        { Normal people
             {}
             {}
         }

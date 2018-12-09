@@ -22,6 +22,8 @@ char * text_reading(FILE *file, long * FileSize);
 
 int main()
 {
+	printf("# Akinator v 0.1.a (c)optirus909\n");
+	
 	FILE *fin;
 	
 	if((fin = fopen(SRC_PATH, "r")) == nullptr)
@@ -36,9 +38,11 @@ int main()
 	
 	theTree.root = src_read_node( &src );
 	
-	tree_dump( &theTree );
+	tree_search( theTree.root );
 	
-	//src_write_tree( &theTree );
+	//tree_dump( &theTree );
+	
+	src_write_tree( &theTree );
 	
 	tree_dtor( &theTree );
 	

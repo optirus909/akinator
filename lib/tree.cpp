@@ -44,8 +44,6 @@ int node_dtor(node_t * node)
 	if ( node->right != nullptr )
 		node_dtor( node->right );
 	
-	//free( node->data );
-	
 	return 0;
 }
 
@@ -160,7 +158,7 @@ node_t * src_read_node(char ** src)
 {
 	skip_spaces(src);
 	
-	char buf[50] = "";
+	char buf[SRC_BUF_SIZE] = "";
 	sscanf(*src, "%s", buf);
 	(*src) += strlen(buf);
 	
@@ -209,4 +207,58 @@ int skip_spaces(char ** text)
 		(*text)++;
 	
 	return 0;
+}
+
+//-----------------------------------------------------------------------------------------------------
+
+int tree_search( node_t * node )
+{
+	printf("%s? (y/n)\n", node->data);
+	
+	char ans = getchar();
+	getchar();
+	
+	if (ans == 'y')
+	{
+		if(node->left != nullptr && node->right != nullptr)
+		{
+			node = node->left;
+			tree_search(node);
+		}
+		else
+			printf("As i said...\n");
+	}
+	else if (node->right != nullptr)
+	{
+		node = node->right;
+		tree_search(node);
+	}
+	else
+	{
+		printf("Who is it?\n");
+		
+		char buf[SRC_BUF_SIZE] = "";
+		fgets(buf, SRC_BUF_SIZE, stdin);
+		
+		int i = 0;
+		while(buf[i] != '\n')
+			i++;
+		buf[i] = ' ';
+		
+		node->left = node_ctor( buf );
+		node->right = node_ctor( node->data );
+		
+		char question[SRC_BUF_SIZE] = "";
+		
+		printf("How does %s differ from %s?\n", node->left->data, node->right->data);
+		
+		fgets(question, SRC_BUF_SIZE, stdin);
+		
+		i = 0;
+		while(question[i] != '\n')
+			i++;
+		question[i] = ' ';
+		
+		node->data = strdup( question );
+	}
 }

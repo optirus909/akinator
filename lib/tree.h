@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 //-----------------------------------------------------------------------------------------------------
 
@@ -40,6 +41,10 @@ enum CONSTS
 
 #endif
 
+enum TREE_CONSTS
+{
+	SRC_BUF_SIZE = 100
+};
 //-----------------------------------------------------------------------------------------------------
 
 #define DOT_MAKE_PATH "dot -Tjpg -o /Users/andreyandriyaynen/CLionProjects/akinator/img/tree.jpg /Users/andreyandriyaynen/CLionProjects/akinator/img/tree.dot"
@@ -59,6 +64,7 @@ int src_write_node (node_t * node, FILE * fout);
 node_t * node_ctor(char * node_data);
 node_t * src_read_node(char ** src);
 int skip_spaces(char ** text);
+int tree_search( node_t * node );
 
 //-----------------------------------------------------------------------------------------------------
 

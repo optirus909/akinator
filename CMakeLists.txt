@@ -3,4 +3,4 @@ project(akinator)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(akinator main.cpp)
+add_executable(akinator main.cpp lib/tree.cpp lib/tree.h)
